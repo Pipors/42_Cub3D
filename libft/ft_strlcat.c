@@ -3,16 +3,16 @@
 /*                                                        :::      ::::::::   */
 /*   ft_strlcat.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: hbelhadj <hbelhadj@student.42.fr>          +#+  +:+       +#+        */
+/*   By: aatbir <aatbir@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/01 22:26:30 by aatbir            #+#    #+#             */
-/*   Updated: 2024/05/20 11:05:27 by hbelhadj         ###   ########.fr       */
+/*   Updated: 2024/06/04 19:45:59 by aatbir           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-size_t	ft_strlcat(char *dest,  char *src, size_t len)
+size_t	ft_strlcat(char *dest, char *src, size_t len)
 {
 	size_t	i;
 	size_t	s;

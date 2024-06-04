@@ -6,7 +6,7 @@
 /*   By: aatbir <aatbir@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/18 19:58:34 by aatbir            #+#    #+#             */
-/*   Updated: 2024/06/04 18:54:50 by aatbir           ###   ########.fr       */
+/*   Updated: 2024/06/04 19:41:04 by aatbir           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -38,8 +38,8 @@ int	main(int ac, char **av)
 		return (printf("Error\nUSAGE : ./exe 'mapfile.cub'\n"), -1);
 	info = malloc(sizeof(t_info));
 	is_cub(av[1]);
-	info_path = (t_map *)ft_calloc(sizeof(t_map), 1);
-	info_path->info = info;
+	g_info_path = (t_map *)ft_calloc(sizeof(t_map), 1);
+	g_info_path->info = info;
 	parsing(info, av[1]);
 	pos_player(info);
 	init(info, av[1]);

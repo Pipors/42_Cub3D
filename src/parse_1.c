@@ -6,7 +6,7 @@
 /*   By: aatbir <aatbir@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/03 16:14:40 by aatbir            #+#    #+#             */
-/*   Updated: 2024/06/03 17:17:28 by aatbir           ###   ########.fr       */
+/*   Updated: 2024/06/04 19:41:04 by aatbir           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -43,7 +43,7 @@ int	map_len(void)
 	int	i;
 
 	i = 0;
-	while (info_path->info->map[i])
+	while (g_info_path->info->map[i])
 		i++;
 	return (i);
 }

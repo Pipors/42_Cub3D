@@ -6,7 +6,7 @@
 /*   By: aatbir <aatbir@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/06/04 17:37:50 by aatbir            #+#    #+#             */
-/*   Updated: 2024/06/04 17:40:22 by aatbir           ###   ########.fr       */
+/*   Updated: 2024/06/04 19:41:04 by aatbir           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -68,7 +68,7 @@ int	get_height(void)
 	int	i;
 
 	i = 0;
-	while (info_path->info->map[i])
+	while (g_info_path->info->map[i])
 		i++;
 	return (i);
 }
@@ -82,10 +82,10 @@ int	get_width(void)
 	i = 0;
 	j = 0;
 	max_width = 0;
-	while (info_path->info->map[i])
+	while (g_info_path->info->map[i])
 	{
 		j = 0;
-		while (info_path->info->map[i][j])
+		while (g_info_path->info->map[i][j])
 			j++;
 		if (j > max_width)
 			max_width = j;

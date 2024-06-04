@@ -6,7 +6,7 @@
 /*   By: aatbir <aatbir@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/06/03 16:58:50 by aatbir            #+#    #+#             */
-/*   Updated: 2024/06/04 16:34:53 by aatbir           ###   ########.fr       */
+/*   Updated: 2024/06/04 19:41:04 by aatbir           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -83,7 +83,7 @@ void	put_map(char **map, char *file_name)
 
 	(void)file_name;
 	i = skip_part1(map);
-	info_path->info->map = ft_calloc(sizeof(char *), 
+	g_info_path->info->map = ft_calloc(sizeof(char *), 
 			((len2darray(map) - i) + 1));
 	j = 0;
 	while (map[i])
@@ -91,9 +91,9 @@ void	put_map(char **map, char *file_name)
 		if (!map[i][0])
 			i++;
 		else
-			info_path->info->map[j++] = ft_strdup(map[i++]);
+			g_info_path->info->map[j++] = ft_strdup(map[i++]);
 	}
-	info_path->info->map[j] = NULL;
+	g_info_path->info->map[j] = NULL;
 	i = 0;
 	free_(map);
 }

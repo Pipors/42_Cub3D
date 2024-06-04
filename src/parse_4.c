@@ -6,7 +6,7 @@
 /*   By: aatbir <aatbir@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/06/04 16:39:52 by aatbir            #+#    #+#             */
-/*   Updated: 2024/06/04 16:46:31 by aatbir           ###   ########.fr       */
+/*   Updated: 2024/06/04 19:41:04 by aatbir           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -77,7 +77,7 @@ int	checker_map1(char *file_name)
 	player_pos();
 	if (!check_first_last())
 		return (0);
-	if (!is_closed(info_path->info->pos || !is_closed('0')))
+	if (!is_closed(g_info_path->info->pos || !is_closed('0')))
 		return (0);
 	return (1);
 }
