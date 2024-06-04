@@ -1,16 +1,24 @@
 SRC = main.c \
        ray.c \
+       ray_1.c \
+       ray_2.c \
+       ray_3.c \
+       ray_4.c \
        check_identity.c \
        space_handler.c \
        utils.c \
        utils_2.c \
+       utils_3.c \
+       utils_4.c \
        get_path.c \
        get_color.c \
        color.c \
        parse_1.c \
        parse_2.c \
        parse_3.c \
+       parse_4.c \
        parsing.c \
+       png_helper.c \
        helpers.c
 
 SRC_DIR = src/

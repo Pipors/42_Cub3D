@@ -6,7 +6,7 @@
 /*   By: aatbir <aatbir@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/13 14:14:11 by aatbir            #+#    #+#             */
-/*   Updated: 2024/06/03 17:32:20 by aatbir           ###   ########.fr       */
+/*   Updated: 2024/06/04 18:48:20 by aatbir           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -133,10 +133,10 @@ typedef struct s_info
 	char	**map;
 	double		viewangle;
 	double	dis;
-	mlx_texture_t	*tex1;
-	mlx_texture_t	*tex2;
-	mlx_texture_t	*tex3;
-	mlx_texture_t	*tex4;
+	mlx_texture_t	*tex_north;
+	mlx_texture_t	*tex_south;
+	mlx_texture_t	*tex_west;
+	mlx_texture_t	*tex_east;
 	mlx_image_t		*img;
 	mlx_t			*mlx;
 	t_player	player;
@@ -158,6 +158,15 @@ typedef struct s_info
     int reversedG_C;
     int reversedB_C;
 	int alpha;
+	float dx;
+	float dy;
+	int x_tex;
+	int y_tex;
+	int y_start;
+	int y_end;
+	int x_map;
+	int y_map;
+	double k;
 }	t_info;
 
 // typedef struct s_player
@@ -198,35 +207,63 @@ char	*valid_second_info(t_info *info, char *filename);
 char	*valid_third_info(t_info *info, char *filename);
 char	*valid_fourth_info(t_info *info, char *filename);
 int		*split_first_color(t_info *info, char *filename);
+const char	*valid_first(t_info *info, char *filename);
+const char	*valid_second(t_info *info, char *filename);
+const char	*valid_third(t_info *info, char *filename);
+const char	*valid_fourth(t_info *info, char *filename);
+char		*ft_strtrim(char const *s1, char const *set);
 char	**textures(void);
 int		compare_dup_text(t_info *info, char *filename);
 void	parsing(t_info *info, char *filename);
 int		compare(char *s1, char *s2);
-
+void	check_first_path(t_info *info, char **str, int i);
+void	check_second_path(t_info *info, char **str, int i);
+void	check_third_path(t_info *info, char **str, int i);
+void	check_fourth_path(t_info *info, char **str, int i);
+void	check_second_color(t_info *info, char **str, int i);
+void	check_first_color(t_info *info, char **str, int i);
 void	arr_free(char **s);
-
+t_cord	vertical_intersection(t_info *mlx, float ray_angle);
+t_cord	horizontal_intersection(t_info *mlx, float ray_angle);
 char	**store_get_info_in_array(t_info *info, char *filename);
 char	*valid_first_info(t_info *info, char *filename);
 char	*ft_half_strtrim(char const *s1, char const *set);
-
+void	parsing(t_info *info, char *filename);
 char	*take_first_string(char *line);
 char	*start_with(char *first_word, char *target, size_t size);
 int		is_valid_textures(t_info *info, char *filename);
 void check_get_info(t_info	*info, char *filename);
 void	player_pos(void);
+double	deg2rad(double degrees);
+void	rgb(t_info *map);
 int get_height(void);
 int get_width(void);
+void _short(t_info *map, double x_percent, mlx_texture_t	*tex);
+void check_dir(t_info *map, int i, int j);
 void draw_map(void *param);
 int32_t reverseRGB(char* input);
+void	drawalls(t_info *map, double i);
 void pos_player(t_info *map);
 int32_t	run_game(void);
-void init(t_info *map);
+void rotation(t_info *map);
+void	problem(t_info *map, double *target_x, double *target_y);
+void	loop_ray(t_info *map);
+void	protection(t_info *map);
+void hooks(t_info *map, double *target_x, double *target_y);
+int	is_closed(char c);
+void init(t_info *map, char *filename);
 int check_content(void);
+int	check_first_last(void);
 void put_map(char **map, char *file_name);
 int	all_white(char *str);
 void	*free_(char **file);
+void	free_arr(char **ar);
 int empty_line(void);
 int	check_existance(char c);
 int	lines_number(char *str);
 int	map_len(void);
+void	my_mlx_texture_to_image(t_info*map, double x_percent);
+t_cord	smallest(t_info *mlx, t_cord c1, t_cord c2);
+double	pow_2(double x);
+int	lenofmap(char **arr);
 #endif

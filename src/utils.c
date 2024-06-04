@@ -6,7 +6,7 @@
 /*   By: aatbir <aatbir@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/24 18:31:52 by aatbir            #+#    #+#             */
-/*   Updated: 2024/06/03 17:13:02 by aatbir           ###   ########.fr       */
+/*   Updated: 2024/06/04 18:54:10 by aatbir           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -62,24 +62,4 @@ int	compare_dup_text(t_info *info, char *filename)
 		|| (compare(str[4], str[5]) == 0))
 		throw_err_2("Error\nDuplicated Identifier\n");
 	return (arr_free(str), 0);
-}
-
-int	lines_number(char *str)
-{
-	char	*s;
-	int		fd;
-	int		i;
-
-	i = 0;
-	fd = open(str, O_RDWR);
-	s = get_next_line(fd);
-	while (s)
-	{
-		++i;
-		free(s);
-		s = get_next_line(fd);
-	}
-	free(s);
-	close(fd);
-	return (i);
 }

@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_split.c                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: aatbir <marvin@42.fr>                      +#+  +:+       +#+        */
+/*   By: hbelhadj <hbelhadj@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/04 15:29:54 by aatbir            #+#    #+#             */
-/*   Updated: 2022/11/09 20:56:51 by aatbir           ###   ########.fr       */
+/*   Updated: 2024/06/03 22:53:30 by hbelhadj         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -63,6 +63,34 @@ size_t	wordlen(char const *s, int c)
 	return (count);
 }
 
+// char	**ft_split(char const *s, char c)
+// {
+// 	char	**del_s;
+// 	size_t	x;
+// 	size_t	y;
+// 	size_t	z;
+
+// 	x = 0;
+// 	y = 0;
+// 	del_s = (char **)malloc(sizeof(char *) * (wordlen(s, c) + 1));
+// 	if (!del_s || !s)
+// 		return (NULL);
+// 	while (x < wordlen(s, c) && s[y] != '\0')
+// 	{
+// 		while (s[y] == c)
+// 			y++;
+// 		z = y;
+// 		while (s[y] != c && s[y] != '\0')
+// 			y++;
+// 		del_s[x] = ft_alloclist(&s[z], y - z);
+// 		if (del_s[x] == 0)
+// 			return (ft_free(del_s));
+// 		x++;
+// 	}
+// 	del_s[x] = NULL;
+// 	return (del_s);
+// }
+
 char	**ft_split(char const *s, char c)
 {
 	char	**del_s;
@@ -77,6 +105,12 @@ char	**ft_split(char const *s, char c)
 		return (NULL);
 	while (x < wordlen(s, c) && s[y] != '\0')
 	{
+		// if (s[y] == '\n' && s[y+1] && s[y+1] == '\n')
+		// {
+		// 	// del_s[x] = '\n';
+		// 	del_s[x] = ft_alloclist("\n", y - z);
+		// 	// continue;
+		// }
 		while (s[y] == c)
 			y++;
 		z = y;

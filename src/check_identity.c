@@ -6,7 +6,7 @@
 /*   By: aatbir <aatbir@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/13 13:55:26 by aatbir            #+#    #+#             */
-/*   Updated: 2024/06/03 16:33:41 by aatbir           ###   ########.fr       */
+/*   Updated: 2024/06/04 16:23:16 by aatbir           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -95,7 +95,6 @@ char	**splimed_key_value_6(char *filename)
 			splimed_str[j++] = ft_strtrim(str[i], " \t");
 		i++;
 	}
-	// xhadik(str, rawmap, j);
 	return (free(rawmap), arr_free(str), splimed_str);
 }
 

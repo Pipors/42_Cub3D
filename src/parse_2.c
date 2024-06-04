@@ -6,7 +6,7 @@
 /*   By: aatbir <aatbir@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/06/03 16:58:50 by aatbir            #+#    #+#             */
-/*   Updated: 2024/06/03 16:59:40 by aatbir           ###   ########.fr       */
+/*   Updated: 2024/06/04 16:34:53 by aatbir           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,7 +22,10 @@ int	all_white(char *str)
 	while (str[i])
 	{
 		if (str[i] != ' ' && str[i] != '\t' && str[i] != '\n')
+		{
+			printf("magdaaar\n");
 			return (0);
+		}
 		i++;
 	}
 	return (1);
@@ -43,7 +46,7 @@ int	end(char **map, char *file_name)
 	return (e);
 }
 
-int skip_part1(char **tab)
+int	skip_part1(char **tab)
 {
 	int	i;
 	int	c;
@@ -73,7 +76,7 @@ int	len2darray(char **array)
 	return (i);
 }
 
-void put_map(char **map, char *file_name)
+void	put_map(char **map, char *file_name)
 {
 	int	i;
 	int	j;
